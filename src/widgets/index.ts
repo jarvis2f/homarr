@@ -12,6 +12,7 @@ import mediaRequestsList from './media-requests/MediaRequestListTile';
 import mediaRequestsStats from './media-requests/MediaRequestStatsTile';
 import mediaServer from './media-server/MediaServerTile';
 import notebook from './notebook/NotebookWidgetTile';
+import openwrtShadowsocksR from './openwrt/ShadowsocksRWidgetTile';
 import rss from './rss/RssWidgetTile';
 import smartHomeEntityState from './smart-home/entity-state/entity-state.widget';
 import smartHomeTriggerAutomation from './smart-home/trigger-automation/trigger-automation.widget';
@@ -40,6 +41,7 @@ export default {
   'dns-hole-controls': dnsHoleControls,
   bookmark,
   notebook,
+  'openwrt/shadowsocksR': openwrtShadowsocksR,
   'smart-home/entity-state': smartHomeEntityState,
   'smart-home/trigger-automation': smartHomeTriggerAutomation,
   'health-monitoring': healthMonitoring,

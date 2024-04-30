@@ -23,6 +23,7 @@ import { usenetRouter } from './routers/usenet/router';
 import { userRouter } from './routers/user';
 import { weatherRouter } from './routers/weather';
 import { tdarrRouter } from '~/server/api/routers/tdarr';
+import { openwrtShadowsocksRRouter } from '~/server/api/routers/openwrt/shadowsocksR';
 
 /**
  * This is the primary router for your server.
@@ -53,6 +54,7 @@ export const rootRouter = createTRPCRouter({
   smartHomeEntityState: smartHomeEntityStateRouter,
   healthMonitoring: healthMonitoringRouter,
   tdarr: tdarrRouter,
+  openwrtShadowsocksR: openwrtShadowsocksRRouter,
 });
 
 // export type definition of API

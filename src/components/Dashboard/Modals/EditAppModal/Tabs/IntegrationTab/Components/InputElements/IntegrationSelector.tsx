@@ -207,5 +207,10 @@ export const availableIntegrations = [
     value: 'tdarr',
     image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tdarr.png',
     label: 'Tdarr',
+  },
+  {
+    value: 'openwrt',
+    image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/openwrt.png',
+    label: 'OpenWRT',
   }
 ] as const satisfies Readonly<SelectItem[]>;

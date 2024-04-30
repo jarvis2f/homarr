@@ -60,7 +60,8 @@ export type IntegrationType =
   | 'homeAssistant'
   | 'openmediavault'
   | 'proxmox'
-  | 'tdarr';
+  | 'tdarr'
+  | 'openwrt';
 
 export type AppIntegrationType = {
   type: IntegrationType | null;
@@ -107,6 +108,7 @@ export const integrationFieldProperties: {
   openmediavault: ['username', 'password'],
   proxmox: ['apiKey'],
   tdarr: [],
+  openwrt: ['username', 'password'],
 };
 
 export type IntegrationFieldDefinitionType = {

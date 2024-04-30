@@ -32,6 +32,7 @@ export const boardNamespaces = [
   'modules/dns-hole-controls',
   'modules/bookmark',
   'modules/notebook',
+  'modules/openwrt/shadowsocksR',
   'modules/smart-home/entity-state',
   'modules/smart-home/trigger-automation',
   'modules/media-transcoding',

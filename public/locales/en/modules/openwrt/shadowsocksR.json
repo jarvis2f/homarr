@@ -1,0 +1,7 @@
+{
+  "descriptor": {
+    "name": "OpenWrt ShadowSocksR",
+    "description": "Check status of ShadowsSocksR and change server"
+  },
+  "status": "ok"
+}

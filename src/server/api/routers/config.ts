@@ -12,6 +12,7 @@ import { boardCustomizationSchema, configNameSchema } from '~/validations/boards
 import { IRssWidget } from '~/widgets/rss/RssWidgetTile';
 
 import { adminProcedure, createTRPCRouter, publicProcedure } from '../trpc';
+import { OpenWrtSingleton } from '~/tools/singleton/OpenWrtSingleton';
 
 export const configRouter = createTRPCRouter({
   delete: adminProcedure
@@ -55,6 +56,7 @@ export const configRouter = createTRPCRouter({
       // Delete the file
       fs.unlinkSync(path.join('data/configs', matchedFile));
       Consola.info(`Successfully deleted configuration '${input.name}' from your file system`);
+      OpenWrtSingleton.clear(input.name);
       return {
         message: 'Configuration deleted with success',
       };
@@ -160,7 +162,7 @@ export const configRouter = createTRPCRouter({
       fs.writeFileSync(targetPath, JSON.stringify(newConfig, null, 2), 'utf8');
 
       Consola.debug(`Config '${input.name}' has been updated and flushed to '${targetPath}'.`);
-
+      OpenWrtSingleton.clear(input.name);
       return {
         message: 'Configuration saved with success',
       };
