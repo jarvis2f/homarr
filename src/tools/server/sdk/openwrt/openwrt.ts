@@ -110,7 +110,7 @@ export class OpenWrtClient {
       return false;
     }
 
-    return this.applyConfig('shadowsocksr');
+    return this.commitConfig('shadowsocksr');
   }
 
   async getAllConfigs(config: string) {
@@ -130,6 +130,11 @@ export class OpenWrtClient {
 
   async applyConfig(config: string) {
     const body = await this.uci('apply', [config]);
+    return body?.result != null;
+  }
+
+  async commitConfig(config: string) {
+    const body = await this.uci('commit', [config]);
     return body?.result != null;
   }
 
