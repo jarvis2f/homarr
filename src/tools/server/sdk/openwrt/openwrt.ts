@@ -58,7 +58,11 @@ export class OpenWrtClient {
     if (!configs) {
       return undefined;
     }
-    const servers = [];
+    const servers = [{
+      name: 'nil',
+      server: '',
+      alias: '❎ Stop',
+    }];
     let globalServerName;
     for (const config of Object.values(configs) as any[]) {
       if (config['.type'] === 'servers') {
@@ -77,8 +81,8 @@ export class OpenWrtClient {
     return {
       global: {
         name: globalServerName,
-        alias: globalServer.alias,
-        server: globalServer.server,
+        alias: globalServer?.alias,
+        server: globalServer?.server,
       },
       servers,
     };
