@@ -1,9 +1,9 @@
 import { z } from 'zod';
-import { createTRPCRouter, protectedProcedure } from '~/server/api/trpc';
+import { createTRPCRouter, publicProcedure } from '~/server/api/trpc';
 import { OpenWrtSingleton } from '~/tools/singleton/OpenWrtSingleton';
 
 export const openwrtShadowsocksRRouter = createTRPCRouter({
-  status: protectedProcedure
+  status: publicProcedure
     .input(
       z.object({
         configName: z.string(),
@@ -15,7 +15,7 @@ export const openwrtShadowsocksRRouter = createTRPCRouter({
       return openwrt.getShadowsocksRStatus();
     }),
 
-  info: protectedProcedure
+  info: publicProcedure
     .input(
       z.object({
         configName: z.string(),
@@ -27,7 +27,7 @@ export const openwrtShadowsocksRRouter = createTRPCRouter({
       return openwrt.getShadowsocksRInfo();
     }),
 
-  check: protectedProcedure
+  check: publicProcedure
     .input(
       z.object({
         configName: z.string(),
@@ -40,7 +40,7 @@ export const openwrtShadowsocksRRouter = createTRPCRouter({
       return openwrt.checkShadowsocksRConnectivity(input.testObject);
     }),
 
-  changeServer: protectedProcedure
+  changeServer: publicProcedure
     .input(
       z.object({
         configName: z.string(),
